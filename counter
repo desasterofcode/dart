@@ -1,0 +1,49 @@
+# Eingabefehler abfangen
+fehler = 1
+
+while fehler == 1:
+    print("Bitte geben Sie den gewünschten Modus (301 oder 501) ein:")
+    x = input()
+
+    #try:
+    modus = int(x)
+    #    fehler = 0
+    #except:
+    #    print("Falsche Eingabe! Bitte erneut auswählen.")
+
+
+if modus == 301:
+    print("Sie spielen jetzt", modus)
+    print("Sie beginnen mit 301 Punkten.")
+    punkte = 301
+    while punkte != 0:
+        print("Ihr Wurf?")
+        wurf = int(input())
+        punkte = punkte - wurf
+        if punkte > 0:
+            print("Sie haben noch", punkte, "Punkte.")
+        elif punkte < 0:
+            print("Sie haben überworfen!")
+            punkte = punkte + wurf
+            print("Sie haben noch", punkte, "Punkte.")
+        else:
+            print("Das Spiel ist beendet.")
+
+elif modus == 501:
+    print("Sie spielen jetzt", modus)
+    print("Sie beginnen mit 501 Punkten.")
+    punkte = 501
+    while punkte > 0:
+        print("Ihr Wurf?")
+        wurf = int(input())
+        punkte = punkte - wurf
+        if punkte > 0:
+            print("Sie haben noch", punkte, "Punkte.")
+        elif punkte < 0:
+            print("Sie haben überworfen!")
+            punkte = punkte + wurf
+            print("Sie haben noch", punkte, "Punkte.")
+        else:
+            print("Das Spiel ist beendet.")
+else:
+    print("Falschen Modus ausgewählt!")
